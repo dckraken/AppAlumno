@@ -1,0 +1,148 @@
+secc a09
+! configuracion de interfaces
+interface FastEthernet0/0
+ ip address 160.161.166.167 255.255.254.29
+ bandwidth 1250
+ no shutdown 
+exit
+!
+interface Serial0/0
+ ip address 168.169.170.171 255.255.254.29
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial1/0
+ ip address 172.173.178.179 255.255.254.29
+ bandwidth 1250
+ no shutdown
+ exit
+!
+router ospf 50
+ network 172.0.4.0 0.0.1.255 area 0
+ network 168.0.4.0 0.0.1.255 area 0
+ network 160.0.10.0 0.0.1.255 area 0
+ exit
+!
+!
+end
+
+hostname secc a10
+! configuracion de interfaces
+interface FastEthernet0/0
+ ip address 204.205.210.211 255.255.254.0
+ bandwidth 1250
+ no shutdown 
+exit
+!
+interface Serial1/0
+ ip address 184.185.198.199 255.255.254.0
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial0/1
+ ip address 176.177.182.183 255.255.254.0
+ bandwidth 1250
+ no shutdown
+ exit
+!
+router ospf 50
+ network 176.0.10.0 0.0.1.255 area 0
+ network 184.0.6.0 0.0.1.255 area 0
+ network 204.0.12.0 0.0.1.255 area 0
+ exit
+!
+!
+end
+
+hostname secc a11
+! configuracion de interfaces
+interface FastEthernet0/0
+ ip address 86.1.144.1 255.255.254.0
+ bandwidth 1250
+ no shutdown 
+exit
+!
+interface Serial1/0
+ ip address 86.0.10.2 255.255.254.0
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial0/1
+ ip address 86.0.14.2 255.255.254.0
+ bandwidth 1250
+ no shutdown
+ exit
+!
+router ospf 50
+ network 86.1.144.0 0.0.1.255 area 0
+ network 86.0.10.0 0.0.1.255 area 0
+ network 86.0.14.0 0.0.1.255 area 0
+ exit
+
+end
+
+hostname secc a12
+interface Serial0/1
+ ip address 86.0.2.1 255.255.254.0
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial1/0
+ ip address 86.0.4.1 255.255.254.0
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial0/0
+ ip address 86.0.8.1 255.255.254.0
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+router ospf 50
+ network 86.0.2.0 0.0.1.255 area 0
+ network 86.0.4.0 0.0.1.255 area 0
+ network 86.0.8.0 0.0.1.255 area 0
+ exit
+!
+!
+end
+
+
+hostname Secc a13
+interface Serial0/1
+ ip address 184.185.186.187 255.255.255.30
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial1/0
+ ip address 188.189.190.191 255.255.255.30
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+interface Serial1/1
+ ip address 192.193.206.207 255.255.255.30
+ clock rate 1000000 
+ bandwidth 1250
+ no shutdown
+ exit
+!
+router ospf 50
+ network 176.0.12.0 0.0.1.255 area 0
+ network 192.0.14.0 0.0.1.255 area 0
+ network 180.0.8.0 0.0.1.255 area 0
+ exit
+!
+!
+end
